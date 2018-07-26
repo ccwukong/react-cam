@@ -24,10 +24,15 @@ import { Camera } from 'react-cam';
 class ContainerComponent extends Component{
   ...
 
+  capture = (imgSrc) => {
+    // imgSrc is base64 string
+  }
+
   render(){
     return (
       //Recommended resolution for web cams and phone cameras 1920 x 1440
       <Camera
+        capture={this.capture}
         width={1920} 
         height={1440}
         />
