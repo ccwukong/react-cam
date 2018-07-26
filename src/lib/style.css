@@ -1,0 +1,50 @@
+.flexbox{
+  display: flex;
+}
+.camera-focus{
+  width: 80%;
+  height: 56%;
+  border: 1px solid #2acef5;
+  position: fixed;
+  top: 15%;
+  margin-left: 50%;
+  left: -40%;
+  z-index: 99;
+}
+#new-image{
+  position: fixed;
+  bottom: 12px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.camera-btn-outer{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  margin-left: 50%;
+  left: -30px;
+  border-radius: 30px !important;
+  bottom: 10;
+  background: #2acef5;
+  z-index: 99;
+}
+#camera-btn{
+  width: 52px;
+  height: 52px;
+  border: 2px solid #fff;
+  border-radius: 26px !important;
+  background: #2acef5;
+}
+#video{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
