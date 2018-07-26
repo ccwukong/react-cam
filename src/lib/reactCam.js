@@ -10,7 +10,7 @@ class Camera extends Component {
         video: {
           width: { ideal: this.props.width },
           height: { ideal: this.props.height },
-          facingMode: 'environment',
+          facingMode: this.props.front ? 'user' : 'environment',
         },
       })
       .then(this.success)
@@ -57,12 +57,14 @@ class Camera extends Component {
             autoPlay
             ref="cam"
         />
-        <div className="camera-focus" />
+        { this.props.showFocus ? 
+         <div className="camera-focus" />: null
+        }
         <div
             className="camera-btn-outer flexbox"
-            style={{ justifyContent: 'center', alignItems: 'center', bottom: 10 }}
+            style={{ justifyContent: 'center', alignItems: 'center', bottom: 10, background: this.props.btnColor?this.props.btnColor:'#2acef5' }}
           >
-          <input type="button" onClick={this.capture} id="camera-btn" />
+          <input type="button" onClick={this.capture} id="camera-btn" style={{ background: this.props.btnColor?this.props.btnColor:'#2acef5' }} />
         </div>
         <canvas id="canvas" width={this.state.camWidth} height={this.state.camHeight} ref="canvas" style={{ display: 'none' }}></canvas>
       </div>
