@@ -1,7 +1,7 @@
-#react-cam
+# react-cam
 HTML5 Web/Mobile camera for ReactJS
 
-#Installation
+# Installation
 
 ## NPM
 ```console 
@@ -14,7 +14,7 @@ yarn add react-cam
 ```
 
 
-#How to use it?
+# How to use it?
 ```javascript
 import React, {Component} from 'react';
 import { Camera } from 'react-cam';
