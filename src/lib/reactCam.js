@@ -22,13 +22,13 @@ class Camera extends Component {
   }
   success = stream => {
     const video = this.refs.cam;
-    const CompatibleURL = window.URL || window.webkitURL;
-    video.src = CompatibleURL.createObjectURL(stream);
+    const compatibleUrl = window.URL || window.webkitURL;
+    video.srcObject = stream; //compatibleUrl.createObjectURL(stream);
     video.play();
   };
 
-  error = error => {
-    console.log('Failed: ', error.name, error.message);
+  error = err => {
+    console.log(err);
   };
   
   capture = () => {
@@ -55,6 +55,7 @@ class Camera extends Component {
         <video
             id="video"
             autoPlay
+            playsInline
             ref="cam"
         />
         { this.props.showFocus ? 
