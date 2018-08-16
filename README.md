@@ -18,14 +18,14 @@ yarn add react-cam
 
 ## props
 
-| Prop name  | Default | Description |
-| ------------- | ------------- | ------------- |
-| showFocus  | false  | show/hide the blue focus box, basically useless... |
-| front  | false  | true: front camera, false: rear camera |
-| capture  | None  | A function to handle base64 string image |
-| width  | 480  | Camera pixel width |
-| height  | 320  | Camera pixel height |
-| btnColor  | '#2acef5'  | Set color of the capture button |
+| Prop name  | Optional | Default | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| showFocus  | Yes | false  | show/hide the blue focus box, basically useless... |
+| front  | Yes | false  | true: front camera, false: rear camera |
+| capture  | No | None  | A function to handle base64 string image |
+| width  | No | 480  | Camera pixel width |
+| height  | No | 320  | Camera pixel height |
+| btnColor  | Yes | '#2acef5'  | Set color of the capture button |
 
 ## example
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 
 class Camera extends Component {
@@ -22,8 +23,7 @@ class Camera extends Component {
   }
   success = stream => {
     const video = this.refs.cam;
-    const compatibleUrl = window.URL || window.webkitURL;
-    video.srcObject = stream; //compatibleUrl.createObjectURL(stream);
+    video.srcObject = stream;
     video.play();
   };
 
@@ -71,6 +71,15 @@ class Camera extends Component {
       </div>
     );
   }
+}
+
+Camera.propTypes = {
+  front: PropTypes.bool,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  capture: PropTypes.func.isRequired,
+  showFocus: PropTypes.bool,
+  btnColor: PropTypes.string,
 }
 
 export default Camera;
