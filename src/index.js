@@ -10,7 +10,8 @@ const App = () => (
       front={false}
       capture={()=>{}}
       width={1920}
-      height={1440} />
+      height={1440}
+      btnColor="yellow" />
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("root"));

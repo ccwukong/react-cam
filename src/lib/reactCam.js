@@ -59,7 +59,7 @@ class Camera extends Component {
             ref="cam"
         />
         { this.props.showFocus ? 
-         <div className="camera-focus" />: null
+         <div className="camera-focus" style={{ borderColor: this.props.btnColor?this.props.btnColor:'#2acef5' }} />: null
         }
         <div
             className="camera-btn-outer flexbox"
