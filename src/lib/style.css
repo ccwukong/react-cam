@@ -1,16 +1,11 @@
-.flexbox {
+.camera-container {
   display: flex;
+  justify-content: center;
 }
 .camera-focus {
-  width: 80%;
-  height: 56%;
   border: 1px solid #2acef5;
-  position: fixed;
-  top: 15%;
-  margin-left: 50%;
-  left: -40%;
-  z-index: 99;
-  box-shadow: 0px 0px 1px 1000px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  box-shadow: 0px 0px 1px 9999px rgba(0, 0, 0, 0.5);
 }
 #new-image {
   position: fixed;
@@ -27,15 +22,12 @@
   width: 60px;
   height: 60px;
   position: fixed;
-  margin-left: 50%;
-  left: -30px;
   border-radius: 30px !important;
-  bottom: 10;
+  bottom: 10px;
   background: #2acef5;
   z-index: 99;
   justify-content: center;
   align-items: center;
-  bottom: 10px;
 }
 #camera-btn {
   width: 52px;

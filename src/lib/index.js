@@ -1,2 +1,3 @@
-import Camera from "./reactCam";
+import Camera from './reactCam';
+
 export { Camera };
