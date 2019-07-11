@@ -1,4 +1,6 @@
-# react-cam
+
+# react-cam 
+![npm](https://img.shields.io/npm/dw/react-cam.svg)
 
 HTML5 Web/Mobile camera for ReactJS
 
