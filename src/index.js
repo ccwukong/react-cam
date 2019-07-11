@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Camera } from './lib';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Camera } from "./lib";
 
 const App = () => (
   <div style={{ width: 640, margin: "15px auto" }}>
@@ -8,10 +8,11 @@ const App = () => (
     <Camera
       showFocus={true}
       front={false}
-      capture={()=>{}}
+      capture={() => {}}
       width={1920}
       height={1440}
-      btnColor="yellow" />
+      btnColor="yellow"
+    />
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("root"));

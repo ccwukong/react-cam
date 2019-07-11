@@ -19,7 +19,7 @@ class Camera extends Component {
     this.state = {
       camWidth: null,
       camHeight: null,
-    }
+    };
   }
   success = stream => {
     const video = this.refs.cam;
@@ -30,18 +30,18 @@ class Camera extends Component {
   error = err => {
     console.log(err);
   };
-  
+
   capture = () => {
     const canvas = this.refs.canvas;
     const video = this.refs.cam;
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0);
-    this.props.capture(canvas.toDataURL("image/jpeg"));
-  }
+    this.props.capture(canvas.toDataURL('image/jpeg'));
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     const video = this.refs.cam;
-    video.addEventListener("playing", () => {
+    video.addEventListener('playing', () => {
       this.setState({
         camWidth: video.videoWidth,
         camHeight: video.videoHeight,
@@ -50,24 +50,46 @@ class Camera extends Component {
   }
 
   render() {
+    const defaultColor = '#2acef5';
     return (
       <div>
-        <video
-            id="video"
-            autoPlay
-            playsInline
-            ref="cam"
-        />
-        { this.props.showFocus ? 
-         <div className="camera-focus" style={{ borderColor: this.props.btnColor?this.props.btnColor:'#2acef5' }} />: null
-        }
+        <video id="video" autoPlay playsInline ref="cam" />
+        {this.props.showFocus ? (
+          <div
+            className="camera-focus"
+            style={{
+              borderColor: this.props.btnColor
+                ? this.props.btnColor
+                : defaultColor,
+            }}
+          />
+        ) : null}
         <div
-            className="camera-btn-outer flexbox"
-            style={{ justifyContent: 'center', alignItems: 'center', bottom: 10, background: this.props.btnColor?this.props.btnColor:'#2acef5' }}
-          >
-          <input type="button" onClick={this.capture} id="camera-btn" style={{ background: this.props.btnColor?this.props.btnColor:'#2acef5' }} />
+          className="camera-btn-outer flexbox"
+          style={{
+            background: this.props.btnColor
+              ? this.props.btnColor
+              : defaultColor,
+          }}
+        >
+          <input
+            type="button"
+            onClick={this.capture}
+            id="camera-btn"
+            style={{
+              background: this.props.btnColor
+                ? this.props.btnColor
+                : defaultColor,
+            }}
+          />
         </div>
-        <canvas id="canvas" width={this.state.camWidth} height={this.state.camHeight} ref="canvas" style={{ display: 'none' }}></canvas>
+        <canvas
+          id="canvas"
+          width={this.state.camWidth}
+          height={this.state.camHeight}
+          ref="canvas"
+          style={{ display: 'none' }}
+        />
       </div>
     );
   }
@@ -80,6 +102,6 @@ Camera.propTypes = {
   capture: PropTypes.func.isRequired,
   showFocus: PropTypes.bool,
   btnColor: PropTypes.string,
-}
+};
 
 export default Camera;
