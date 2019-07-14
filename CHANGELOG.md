@@ -1,4 +1,4 @@
-# 1.0.1 (Jul 14, 2019)
+# 1.0.2 (Jul 14, 2019)
 
 - Fixed general stylings, no more fixed positioning
 - Moved capture button out from camera component
