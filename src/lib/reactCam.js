@@ -5,21 +5,19 @@ import './style.css';
 class Camera extends Component {
   constructor(props) {
     super(props);
+
+    const { width, height, front } = this.props;
     navigator.mediaDevices
       .getUserMedia({
         audio: false,
         video: {
-          width: { ideal: this.props.width },
-          height: { ideal: this.props.height },
-          facingMode: this.props.front ? 'user' : 'environment',
+          width: { ideal: width },
+          height: { ideal: height },
+          facingMode: front ? 'user' : 'environment',
         },
       })
       .then(this.success)
       .catch(this.error);
-    this.state = {
-      camWidth: null,
-      camHeight: null,
-    };
   }
 
   success = stream => {
@@ -53,7 +51,14 @@ class Camera extends Component {
 
     return (
       <div className="camera-container">
-        <video id="video" autoPlay playsInline ref="cam" />
+        <video
+          id="video"
+          width={width}
+          height={height}
+          autoPlay
+          playsInline
+          ref="cam"
+        />
         {this.props.showFocus ? (
           <div
             className="camera-focus"
@@ -64,21 +69,6 @@ class Camera extends Component {
             }}
           />
         ) : null}
-        <div
-          className="camera-btn-outer"
-          style={{
-            background: btnColor || defaultColor,
-          }}
-        >
-          <input
-            type="button"
-            onClick={this.capture}
-            id="camera-btn"
-            style={{
-              background: btnColor || defaultColor,
-            }}
-          />
-        </div>
         <canvas
           id="canvas"
           width={width}

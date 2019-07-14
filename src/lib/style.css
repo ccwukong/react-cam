@@ -1,11 +1,12 @@
 .camera-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .camera-focus {
   border: 1px solid #2acef5;
   position: absolute;
-  box-shadow: 0px 0px 1px 9999px rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 #new-image {
   position: fixed;
@@ -18,29 +19,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.camera-btn-outer {
-  width: 60px;
-  height: 60px;
-  position: fixed;
-  border-radius: 30px !important;
-  bottom: 10px;
-  background: #2acef5;
-  z-index: 99;
-  justify-content: center;
-  align-items: center;
-}
-#camera-btn {
-  width: 52px;
-  height: 52px;
-  border: 2px solid #fff;
-  border-radius: 26px !important;
-  background: #2acef5;
-}
+
 #video {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: auto;
   background: #000;
 }

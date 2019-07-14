@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Camera } from './lib';
 
@@ -6,19 +6,23 @@ function capture(imgSrc) {
   console.log(imgSrc);
 }
 
-const App = () => (
-  <div style={{ width: 640, margin: '15px auto' }}>
-    <h1>Hello React</h1>
-    <Camera
-      showFocus={true}
-      front={false}
-      capture={capture}
-      width="80%"
-      height="auto"
-      focusWidth="200px"
-      focusHeight="200px"
-      btnColor="yellow"
-    />
-  </div>
-);
+const App = () => {
+  const cam = useRef(null);
+  return (
+    <Fragment>
+      <Camera
+        showFocus={false}
+        front={false}
+        capture={capture}
+        ref={cam}
+        width="80%"
+        height="80%"
+        focusWidth="30%"
+        focusHeight="30%"
+        btnColor="white"
+      />
+      <button onClick={img => cam.current.capture(img)}>Take image</button>
+    </Fragment>
+  );
+};
 ReactDOM.render(<App />, document.getElementById('root'));

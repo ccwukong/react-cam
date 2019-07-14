@@ -1,5 +1,5 @@
+# react-cam
 
-# react-cam 
 ![npm](https://img.shields.io/npm/dw/react-cam.svg)
 
 HTML5 Web/Mobile camera for ReactJS
@@ -37,33 +37,32 @@ yarn add react-cam
 ## example
 
 ```javascript
-import React, {Component} from 'react';
-import { Camera } from 'react-cam';
+import React, { Fragment, useRef } from 'react';
+import ReactDOM from 'react-dom';
+import { Camera } from './lib';
 
-...
-
-class ContainerComponent extends Component{
-  ...
-
-  capture = (imgSrc) => {
-    // imgSrc is base64 string
-  }
-
-  render(){
-    return (
-      //Recommended resolution for web cams and phone cameras 1920 x 1440
-      <Camera
-        showFocus={true} //show/hide focus box, basically useless...
-        front={false} // true: front camera, false: rear camera
-        capture={this.capture}
-        width={1920}
-        height={1440}
-        focusWidth="200px"
-        focusHeight="200px"
-        btnColor="#000"
-        />
-    )
-  }
+function capture(imgSrc) {
+  console.log(imgSrc);
 }
 
+const App = () => {
+  const cam = useRef(null);
+  return (
+    <Fragment>
+      <Camera
+        showFocus={true}
+        front={false}
+        capture={capture}
+        ref={cam}
+        width="80%%"
+        height="auto"
+        focusWidth="80%"
+        focusHeight="60%"
+        btnColor="white"
+      />
+      <button onClick={img => cam.current.capture(img)}>Take image</button>
+    </Fragment>
+  );
+};
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
