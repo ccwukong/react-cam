@@ -54,7 +54,7 @@ const App = () => {
         front={false}
         capture={capture}
         ref={cam}
-        width="80%%"
+        width="80%"
         height="auto"
         focusWidth="80%"
         focusHeight="60%"
