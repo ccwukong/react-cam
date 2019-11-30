@@ -1,6 +1,6 @@
 {
   "name": "react-cam",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "prop-types": "^15.6.2",
@@ -25,11 +25,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "index.js",
   "license": "Apache-2.0",
   "files": [
-    "dist/",
+    "src/",
     "README.md"
   ],
   "repository": {
