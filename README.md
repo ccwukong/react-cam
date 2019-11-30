@@ -39,7 +39,7 @@ yarn add react-cam
 ```javascript
 import React, { Fragment, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import { Camera } from './lib';
+import { Camera } from 'react-cam';
 
 function capture(imgSrc) {
   console.log(imgSrc);

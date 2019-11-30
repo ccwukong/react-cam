@@ -1,13 +1,19 @@
 {
   "name": "react-cam",
-  "version": "1.1.3",
+  "version": "1.1.11",
+  "private": false,
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/preset-env": "^7.7.4",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.16.0",
@@ -15,21 +21,23 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "20.0.4",
     "prettier": "^1.18.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --open development",
+    "build": "webpack --mode production",
+    "prepublish": "npx babel src --out-dir lib --copy-files"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "Apache-2.0",
   "files": [
-    "src/",
-    "README.md"
+    "lib/lib"
   ],
   "repository": {
     "type": "git",

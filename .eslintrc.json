@@ -4,6 +4,7 @@
     "es6": true
   },
   "extends": ["airbnb"],
+  "parser": "babel-eslint",
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -16,5 +17,11 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "arrow-parens": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/require-default-props": 0,
+    "jsx-a11y/media-has-caption": 0
+  }
 }

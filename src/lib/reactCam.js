@@ -18,10 +18,13 @@ class Camera extends Component {
       })
       .then(this.success)
       .catch(this.error);
+
+    this.camRef = React.createRef();
+    this.canvasRef = React.createRef();
   }
 
   success = stream => {
-    const video = this.refs.cam;
+    const video = this.camRef.current;
     video.srcObject = stream;
     video.play();
   };
@@ -38,8 +41,8 @@ class Camera extends Component {
 
   capture = () => {
     const { capture } = this.props;
-    const canvas = this.refs.canvas;
-    const video = this.refs.cam;
+    const canvas = this.canvasRef.current;
+    const video = this.camRef.current;
     const context = canvas.getContext('2d');
     context.drawImage(video, 0, 0);
     capture(canvas.toDataURL('image/jpeg'));
@@ -47,7 +50,14 @@ class Camera extends Component {
 
   render() {
     const defaultColor = '#2acef5';
-    const { btnColor, width, height, focusWidth, focusHeight } = this.props;
+    const {
+      showFocus,
+      btnColor,
+      width,
+      height,
+      focusWidth,
+      focusHeight,
+    } = this.props;
 
     return (
       <div className="camera-container">
@@ -57,9 +67,9 @@ class Camera extends Component {
           height={height}
           autoPlay
           playsInline
-          ref="cam"
+          ref={this.camRef}
         />
-        {this.props.showFocus ? (
+        {showFocus ? (
           <div
             className="camera-focus"
             style={{
@@ -73,7 +83,7 @@ class Camera extends Component {
           id="canvas"
           width={width}
           height={height}
-          ref="canvas"
+          ref={this.canvasRef}
           style={{ display: 'none' }}
         />
       </div>

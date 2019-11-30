@@ -1,6 +1,6 @@
 import React, { Fragment, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import { Camera } from './lib';
+import { Camera } from '../../src';
 
 function capture(imgSrc) {
   console.log(imgSrc);

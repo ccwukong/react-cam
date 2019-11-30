@@ -1,0 +1,25 @@
+.camera-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.camera-focus {
+  border: 1px solid #2acef5;
+  position: absolute;
+  z-index: 999;
+}
+#new-image {
+  position: fixed;
+  bottom: 12px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#video {
+  background: #000;
+}
